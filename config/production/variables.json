@@ -1,0 +1,17 @@
+{   
+    "app": {
+    },
+    "elasticsearch" : { 
+        "host" : "172.31.55.141:9200",
+        "log"  : "trace"
+    },
+    "session" : {
+        "secret": "kirova",
+        "resave": true,
+        "saveUninitialized": false,
+        "cookie": { 
+            "secure" : false,
+            "maxAge" : 28857593969
+        }
+	}
+}

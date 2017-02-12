@@ -1,0 +1,8 @@
+#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages li { padding: 5px 10px; color: rgb(255, 0, 102);}
+#messages li:nth-child(odd) { color: rgb(0,255,0); }
+
+
+#users { list-style-type: none; margin: 0; padding: 0; }
+#users li { padding: 5px 10px; color: rgb(255, 0, 102);}
+#users li:nth-child(odd) { color: rgb(0,255,0); }
