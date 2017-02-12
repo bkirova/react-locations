@@ -25,13 +25,5 @@ var config = {
 module.exports = {
     config: function(mode) {
         return config[mode || process.argv[2] || process.env.NODE_ENV || "local"] || config.local;
-    },
-    variables: function(mode) {
-        var modeVars = mode || process.env.NODE_ENV || process.argv[2] || "local";
-        return require("./"+modeVars+"/variables");
-    },
-    constants: function(mode) {
-        var modeVars = mode || process.env.NODE_ENV|| process.argv[2] || "local";
-        return require("./"+modeVars+"/constants");
     }
 };
