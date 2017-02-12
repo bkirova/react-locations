@@ -1,7 +1,7 @@
-var name = "react-locations";
-var version = "1.0.0";
+const name = "react-locations";
+const version = "1.0.0";
 
-var config = {
+const config = {
     local: {
         mode: 'local',
         port : 7777,

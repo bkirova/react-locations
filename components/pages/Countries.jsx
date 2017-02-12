@@ -42,9 +42,7 @@ export default class Countries extends React.Component {
                   <h1 className="brand-heading font-montserrat text-uppercase color-light">Search a country by name</h1>                            
               </div>
               <div className="col-md-8 col-md-offset-2 text-center">
-                <label className="sr-only" for="inputHelpBlock">Input with help text</label>
                 <input type="text" onChange = {this.fetchCountries} className="form-control input-circle input-lg no-border text-center"/>
-                
               </div>
               <div className="col-md-12 text-center">
                 <div className="row">
@@ -53,10 +51,7 @@ export default class Countries extends React.Component {
                         return <div key={ country.name } className="col-md-3 col-sm-6 col-xs-12 mt30">
                             <div className="team team-one">
                                 <h3>{ country.name }, { country.region }</h3> 
-                                <h4>Capital: { country.capital }</h4>    
-                                <h5>Population: { country.population }</h5>    
-                                <h5>Area: { country.area }</h5>    
-                                <h5>Native Name: { country.nativeName }</h5>    
+                                <h4>Capital: { country.capital }</h4>     
                             </div>     
                         </div>;
                       })}
