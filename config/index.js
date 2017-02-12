@@ -1,4 +1,4 @@
-var name = "reactChat";
+var name = "react-locations";
 var version = "1.0.0";
 
 var config = {

@@ -2,7 +2,7 @@ var config = {
    entry: './main.js',
 
    output: {
-      path:'/srv/reactChat/public/',
+      path:'/srv/react-locations/public/',
       filename: 'index.js',
    },
 
