@@ -2,6 +2,8 @@ import axios from "axios";
 
 export function fetchCountries(query) {
   return function(dispatch) {
+    dispatch({type: "FETCH_COUNTRIES", payload: []})
+    
     var url = "https://restcountries.eu/rest/v1/all"
     if(query){
       url = "https://restcountries.eu/rest/v1/name/"+query

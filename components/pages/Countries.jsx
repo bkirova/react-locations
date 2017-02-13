@@ -1,12 +1,12 @@
 import React from 'react';
-import axios from 'axios';
 import { connect } from "react-redux";
 
 import { fetchCountries } from "../../actions/countriesActions"
 
 @connect((store) => {
   return {
-    countries: store.countries.countries
+    countries: store.countries.countries,
+    fetching: store.countries.fetching,
   };
 })
 
@@ -26,11 +26,10 @@ export default class Countries extends React.Component {
   }
 
   render() {
-    const { countries } = this.props;
+    const { fetching, countries } = this.props;
 
     return <div id="content">
 
-              <div className="pt100 bg-grad-mojito">
                 <div className="container">
                   <div className="row">
                     <div className="col-md-12 pt50 text-center">
@@ -39,23 +38,36 @@ export default class Countries extends React.Component {
                     <div className="col-md-8 col-md-offset-2 text-center">
                       <input type="text" onChange = {this.fetchCountries} className="form-control input-circle input-lg no-border text-center"/>
                     </div>
+                  </div>
+                  <hr />
+                  <div className="row text-center">
+                    {fetching ? <h2>Loading...</h2>
+                    : countries.map(function(country){
+                      return <div key={ country.name } className="col-md-6 col-sm-12 col-xs-12 mt30">
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><span class={"flag-icon flag-icon-"+country.alpha2Code.toLowerCase()}></span> { country.name }, { country.region }</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                    <div className="col-md-6 col-sm-12 col-xs-12 mt30">
+                                      <h5>Capital: { country.capital }</h5>    
+                                      <h5>Population: { country.population }</h5>    
+                                      <h5>Native Name: { country.nativeName }</h5>   
+                                    </div>  
+                                    <div className="col-md-6 col-sm-12 col-xs-12 mt30">
+                                      <h5>Demonym: { country.demonym }</h5>    
+                                      <h5>Alpha2Code: { country.alpha2Code }</h5>    
+                                      <h5>Alpha2Code: { country.alpha3Code }</h5>    
+                                    </div>  
+                                  </div>
+                                </div>    
+                              </div>
+                      })
+                      }
                   </div>  
+
                 </div>
-              </div>
-              <div className="pt100 bg-gray">
-                <div className="container">
-                  <div className="row">
-                    {countries.map(function(country){
-                      return <div key={ country.name } className="col-md-3 col-sm-6 col-xs-12 mt30">
-                          <div className="team team-one">
-                              <h3>{ country.name }, { country.region }</h3> 
-                              <h4>Capital: { country.capital }</h4>     
-                          </div>     
-                      </div>;
-                    })}
-                  </div>  
-                </div>
-              </div>
+                  
 
            </div> 
 

@@ -1,23 +1,22 @@
 export default function reducer(state={
-    countries: [],
+    capitals: [],
     fetching: false,
     fetched: false,
     error: null,
   }, action) {
-
     switch (action.type) {
-      case "FETCH_COUNTRIES": {
+      case "FETCH_CAPITALS": {
         return {...state, fetching: true}
       }
-      case "FETCH_COUNTRIES_REJECTED": {
+      case "FETCH_CAPITALS_REJECTED": {
         return {...state, fetching: false, error: action.payload}
       }
-      case "FETCH_COUNTRIES_FULFILLED": {
+      case "FETCH_CAPITALS_FULFILLED": {
         return {
           ...state,
           fetching: false,
           fetched: true,
-          countries: action.payload,
+          capitals: action.payload,
         }
       }
     }

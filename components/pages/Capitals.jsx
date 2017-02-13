@@ -1,65 +1,73 @@
 import React from 'react';
-import axios from 'axios';
+import { connect } from "react-redux";
+
+import { fetchCapitals } from "../../actions/capitalsActions"
+
+@connect((store) => {
+  return {
+    capitals: store.capitals.capitals,
+    fetching: store.capitals.fetching,
+  };
+})
+
 export default class Capitals extends React.Component {
-	constructor(props) {
-       super(props);
+  constructor(props) {
+     super(props);
 
-       this.state = {
-          countries: []
-       }
+     this.fetchCapitals = this.fetchCapitals.bind(this);
+  };
 
-       this.search = this.search.bind(this);
+  fetchCapitals(e) {
+    this.props.dispatch(fetchCapitals(e.target.value))
+  }
 
-    };
+  render() {
+    const { fetching, capitals } = this.props;
 
+    return <div id="content">
 
-    componentWillMount() {
-      axios.get('https://restcountries.eu/rest/v1/capital/')
-      .then(response => {
-        this.setState({countries:response.data})
-      })
-    }
-
-    search(e) {
-       
-
-       if(e.target.value){
-           axios.get('https://restcountries.eu/rest/v1/capital/'+e.target.value)
-          .then(response => {
-            this.setState({countries:response.data})
-          })
-       } 
-
-    }
-
-    render() {
-      return (
-          <div className="row">
-              <div className="col-md-12 pt50 text-center">
-                  <h1 className="brand-heading font-montserrat text-uppercase color-light">Search a capital by name</h1>                            
-              </div>
-              <div className="col-md-8 col-md-offset-2 text-center">
-                <label className="sr-only" for="inputHelpBlock">Input with help text</label>
-                <input type="text" onChange = {this.search} className="form-control input-circle input-lg no-border text-center"/>
-                
-              </div>
-              <div className="col-md-12 text-center">
-                <div className="row">
-                     
-                     {this.state.countries.map(function(country){
-                        return <div key={ country.name } className="col-md-3 col-sm-6 col-xs-12 mt30">                    
-                            <div className="team team-one">
-                                
-                                <h3>{ country.capital }</h3>    
-                                <h4>{ country.name }</h4> 
-                            </div>                    
-                        </div>;
-                      })}
-                   
+              <div className="pt100 bg-grad-mojito">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-12 pt50 text-center">
+                      <h1 className="brand-heading font-montserrat text-uppercase color-light">Search a capital by name</h1>                            
+                    </div>
+                    <div className="col-md-8 col-md-offset-2 text-center">
+                      <input type="text" onChange = {this.fetchCapitals} className="form-control input-circle input-lg no-border text-center"/>
+                    </div>
                   </div>
+                  <hr />
+                  <div className="row text-center">
+                    {fetching ? <h2>Loading...</h2>
+                    : capitals.map(function(country){
+                      return <div key={ country.name } className="col-md-6 col-sm-12 col-xs-12 mt30">
+                                <div class="panel panel-default">
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><span class={"flag-icon flag-icon-"+country.alpha2Code.toLowerCase()}></span> { country.name }, { country.region }</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                    <div className="col-md-6 col-sm-12 col-xs-12 mt30">
+                                      <h5>Capital: { country.capital }</h5>    
+                                      <h5>Population: { country.population }</h5>    
+                                      <h5>Native Name: { country.nativeName }</h5>   
+                                    </div>  
+                                    <div className="col-md-6 col-sm-12 col-xs-12 mt30">
+                                      <h5>Demonym: { country.demonym }</h5>    
+                                      <h5>Alpha2Code: { country.alpha2Code }</h5>    
+                                      <h5>Alpha2Code: { country.alpha3Code }</h5>    
+                                    </div>  
+                                  </div>
+                                </div>    
+                              </div>
+                      })
+                      }
+                  </div>  
+
+                </div>
               </div>
-          </div> 
-              
-      );
-   }
+                  
+
+           </div> 
+
+  }
 }
