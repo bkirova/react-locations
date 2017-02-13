@@ -28,28 +28,36 @@ export default class Countries extends React.Component {
   render() {
     const { countries } = this.props;
 
-    return <div className="row">
-              <div className="col-md-12 pt50 text-center">
-                  <h1 className="brand-heading font-montserrat text-uppercase color-light">Search a country by name</h1>                            
+    return <div id="content">
+
+              <div className="pt100 bg-grad-mojito">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-12 pt50 text-center">
+                      <h1 className="brand-heading font-montserrat text-uppercase color-light">Search a country by name</h1>                            
+                    </div>
+                    <div className="col-md-8 col-md-offset-2 text-center">
+                      <input type="text" onChange = {this.fetchCountries} className="form-control input-circle input-lg no-border text-center"/>
+                    </div>
+                  </div>  
+                </div>
               </div>
-              <div className="col-md-8 col-md-offset-2 text-center">
-                <input type="text" onChange = {this.fetchCountries} className="form-control input-circle input-lg no-border text-center"/>
+              <div className="pt100 bg-gray">
+                <div className="container">
+                  <div className="row">
+                    {countries.map(function(country){
+                      return <div key={ country.name } className="col-md-3 col-sm-6 col-xs-12 mt30">
+                          <div className="team team-one">
+                              <h3>{ country.name }, { country.region }</h3> 
+                              <h4>Capital: { country.capital }</h4>     
+                          </div>     
+                      </div>;
+                    })}
+                  </div>  
+                </div>
               </div>
-              <div className="col-md-12 text-center">
-                <div className="row">
-                     
-                     {countries.map(function(country){
-                        return <div key={ country.name } className="col-md-3 col-sm-6 col-xs-12 mt30">
-                            <div className="team team-one">
-                                <h3>{ country.name }, { country.region }</h3> 
-                                <h4>Capital: { country.capital }</h4>     
-                            </div>     
-                        </div>;
-                      })}
-                   
-                  </div>
-              </div>
-          </div> 
+
+           </div> 
 
   }
 }

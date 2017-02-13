@@ -1,8 +1,10 @@
+var path = require('path');
+
 var config = {
    entry: './main.js',
 
    output: {
-      path:'/srv/react-locations/public/',
+      path: path.join(__dirname, "public"),
       filename: 'index.js',
    },
 
