@@ -3,12 +3,10 @@ import axios from 'axios';
 import { connect } from "react-redux";
 
 import { fetchCountries } from "../../actions/countriesActions"
-import { fetchCountry } from "../../actions/countryActions"
 
 @connect((store) => {
   return {
-    countries: store.countries.countries,
-    country: store.countries.country,
+    countries: store.countries.countries
   };
 })
 
@@ -17,7 +15,6 @@ export default class Countries extends React.Component {
      super(props);
 
      this.fetchCountries = this.fetchCountries.bind(this);
-     this.fetchCountry = this.fetchCountry.bind(this);
   };
   
   componentWillMount() {
@@ -28,13 +25,7 @@ export default class Countries extends React.Component {
     this.props.dispatch(fetchCountries(e.target.value))
   }
 
-  fetchCountry(value) {
-    console.log("from function fetch country");
-    this.props.dispatch(fetchCountry(value))
-  }
-
   render() {
-    console.log("PROPS", this.props);
     const { countries } = this.props;
 
     return <div className="row">
