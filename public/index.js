@@ -27897,7 +27897,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'nav',
-	        { className: 'navbar navbar-default navbar-static-top navbar-fixed-top' },
+	        { className: 'navbar navbar-default navbar-static-top' },
 	        _react2.default.createElement(
 	          'a',
 	          { className: 'navbar-brand', href: '/' },
