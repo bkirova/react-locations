@@ -8,7 +8,7 @@ const config = {
         name : name,
         version : version,
     },
-    development: {
+    dev: {
         mode: 'dev',
         port : 7778,
         name : name,

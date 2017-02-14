@@ -29642,7 +29642,7 @@
 	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
 
 	var config = {
-	   entry: './main.js',
+	   entry: './client.js',
 
 	   output: {
 	      path: __dirname,
