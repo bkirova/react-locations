@@ -14,8 +14,8 @@ const config = {
         name : name,
         version : version,
     },
-    production: {
-        mode: 'production',
+    prod: {
+        mode: 'prod',
         port : 7779,
         name : name,
         version : version,
