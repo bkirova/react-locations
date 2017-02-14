@@ -10,7 +10,7 @@ app.use(express.static(staticAssets));
 app.use('/public',express.static(path.join(__dirname, staticAssets)));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(staticAssets, 'index.html'));
+    res.sendFile(path.resolve('/', 'index.html'));
 });
 
 http.listen(config.port, function(){

@@ -1,11 +1,9 @@
-var path = require('path');
-
 var config = {
-   entry: './main.js',
+   entry: './client.js',
 
    output: {
-      path: path.join(__dirname, "public"),
-      filename: 'index.js',
+      path: __dirname,
+      filename: 'bundle.js',
    },
 
    devServer: {

@@ -1,10 +1,10 @@
 {
   "name": "react-locations",
   "version": "1.0.0",
-  "description": "",
+  "description": "An app demo build with React, Redux and Express.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "dev": "webpack-dev-server --hot"
   },
   "keywords": [],
   "author": "Borislava Kirova <b.kirova999@gmail.com> (http://www.chartag.com/)",

@@ -1,1 +1,5 @@
 # react-locations
+
+## License
+
+MIT
