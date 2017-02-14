@@ -29,7 +29,7 @@ and go to `localhost:7777`
 
 ```
 node server.js dev
-node server.js production
+node server.js prod
 node server.js local
 ```
 
