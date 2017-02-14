@@ -2,13 +2,23 @@
   "name": "react-locations",
   "version": "1.0.0",
   "description": "An app demo build with React, Redux and Express.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "webpack-dev-server --hot"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bkirova/react-locations.git"
+  },
+  "keywords": [
+      "react",
+      "search",
+      "webpack",
+      "babel",
+      "ES6"
+  ],
   "author": "Borislava Kirova <b.kirova999@gmail.com> (http://www.chartag.com/)",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.12.0",
     "babel-core": "^6.18.2",
