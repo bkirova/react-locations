@@ -7,12 +7,13 @@ import Layout from './components/Layout.jsx'
 import Countries from './components/pages/Countries.jsx'
 import Capitals from './components/pages/Capitals.jsx'
 
-ReactDOM.render(<Provider store={store}>
-	<Router history={hashHistory}>
-		<Route path="/" component={Layout}>
-			<IndexRoute component={Countries}></IndexRoute>
-			<Route path="/capitals" component={Capitals}></Route>
-		</Route>
-	</Router>
-	</Provider>, 
-	document.getElementById('app'));
+ReactDOM.render(
+<Provider store={store}>
+  <Router history={hashHistory}>
+    <Route path="/" component={Layout}>
+      <IndexRoute component={Countries}></IndexRoute>
+      <Route path="/capitals" component={Capitals}></Route>
+    </Route>
+  </Router>
+</Provider>,
+document.getElementById('app'))

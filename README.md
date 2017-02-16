@@ -25,6 +25,15 @@ npm run dev
 and go to `localhost:7777`
 
 
+## Linter
+
+Run eslint
+
+```
+npm run lint
+```
+
+
 ## Run Express server
 
 ```
