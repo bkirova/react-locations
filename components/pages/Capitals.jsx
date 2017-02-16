@@ -1,7 +1,6 @@
-import React from 'react';
-import { connect } from "react-redux";
-
-import { fetchCapitals } from "../../actions/capitalsActions"
+import React from 'react'
+import { connect } from 'react-redux'
+import { fetchCapitals } from '../../actions/capitalsActions'
 
 @connect((store) => {
   return {

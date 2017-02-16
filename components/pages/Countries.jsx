@@ -1,7 +1,6 @@
-import React from 'react';
-import { connect } from "react-redux";
-
-import { fetchCountries } from "../../actions/countriesActions"
+import React from 'react'
+import { connect } from 'react-redux'
+import { fetchCountries } from '../../actions/countriesActions'
 
 @connect((store) => {
   return {

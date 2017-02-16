@@ -1,9 +1,9 @@
-import { combineReducers } from "redux"
+import { combineReducers } from 'redux'
 
-import countries from "./countriesReducer.js"
-import capitals from "./capitalsReducer.js"
+import countries from './countriesReducer.js'
+import capitals from './capitalsReducer.js'
 
 export default combineReducers({
-	countries,
-	capitals
+  countries,
+  capitals
 })

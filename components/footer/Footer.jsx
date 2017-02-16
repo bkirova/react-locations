@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 export default class Footer extends React.Component {
    render() {
    	  const footerStyle = {
    	  	background: "gray"
-   	  };
+   	  }
 
       return (
         <div id="footer" class="footer navbar-fixed-bottom" style={footerStyle} >
@@ -12,6 +12,6 @@ export default class Footer extends React.Component {
                 <p class="muted credit">Locations&copy; 2016. All rights reserved.</p>
             </div>
         </div>
-      );
+      )
    }
 }

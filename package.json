@@ -4,18 +4,19 @@
   "description": "An app demo build with React, Redux and Express.",
   "main": "server.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot"
+    "dev": "webpack-dev-server --hot",
+    "lint": "eslint ./"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:bkirova/react-locations.git"
   },
   "keywords": [
-      "react",
-      "search",
-      "webpack",
-      "babel",
-      "ES6"
+    "react",
+    "search",
+    "webpack",
+    "babel",
+    "ES6"
   ],
   "author": "Borislava Kirova <b.kirova999@gmail.com> (http://www.chartag.com/)",
   "license": "MIT",
@@ -41,5 +42,11 @@
     "redux-thunk": "^2.1.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.1",
+    "eslint-plugin-standard": "^2.0.1"
   }
 }

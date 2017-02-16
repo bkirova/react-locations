@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
-import Navigation from './header/Navigation.jsx';
-import Footer from './footer/Footer.jsx';
+import Navigation from './header/Navigation.jsx'
+import Footer from './footer/Footer.jsx'
 
 export default class Layout extends React.Component {
    render() {
