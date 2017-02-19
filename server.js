@@ -4,7 +4,9 @@ const app = require('express')()
 const http = require('http').Server(app)
 const path = require('path')
 
-app.use('/', express.static(path.join(__dirname, 'index.html')))
+app.get('/bundle.js', function(req, res){
+  res.sendFile(__dirname + '/bundle.js');
+});
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'))

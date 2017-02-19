@@ -22,7 +22,7 @@ Run webpack dev server
 npm run dev
 ```
 
-and go to `localhost:7777`
+and go to `localhost:7779`
 
 
 ## Linter
