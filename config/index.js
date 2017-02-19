@@ -4,7 +4,7 @@ const version = '1.0.0'
 const config = {
   local: {
     mode: 'local',
-    port: 7777,
+    port: 7779,
     name: name,
     version: version
   },
@@ -14,9 +14,9 @@ const config = {
     name: name,
     version: version
   },
-  prod: {
-    mode: 'prod',
-    port: 7779,
+  production: {
+    mode: 'production',
+    port: 7777,
     name: name,
     version: version
   }
