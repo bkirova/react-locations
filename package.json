@@ -41,7 +41,7 @@
     "redux-promise-middleware": "^3.2.0",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^3.15.0",
