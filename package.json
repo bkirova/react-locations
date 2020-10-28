@@ -21,7 +21,7 @@
   "author": "Borislava Kirova <b.kirova999@gmail.com> (http://www.chartag.com/)",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.12.0",
+    "axios": "^0.21.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.0",
     "babel-plugin-add-module-exports": "^0.1.2",
